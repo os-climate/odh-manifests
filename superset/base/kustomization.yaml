@@ -24,9 +24,6 @@ configMapGenerator:
   - name: superset-config
     envs:
       - params.env
-  - name: superset-config-py
-    files:
-      - superset_config.py
 
 vars:
   - name: superset_secret
