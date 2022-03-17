@@ -66,3 +66,9 @@ data:
                 spark_image: 'quay.io/radanalyticsio/openshift-spark-py36:2.4.5-2'
               return:
                 SPARK_CLUSTER: 'metadata.name'
+        gpuTypes:
+        - type: default
+          node_tolerations:
+            - key: nvidia.com/gpu
+              operator: "Exists"
+              effect: NoSchedule
