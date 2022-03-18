@@ -2,10 +2,11 @@ managers:
   - name: version
     configuration:
       maintainers:
-        - crobby
-        - vpavlin
-        - lavlas
-        - nakfour
+        - 4n4nd
+        - Gkrumbach07
+        - Gregory-Pereira
+        - harshad16
+        - HumairAK
       assignees:
         - sesheta
       labels: [bot]
