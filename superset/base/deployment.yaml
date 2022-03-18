@@ -37,6 +37,8 @@ spec:
               name: $(superset_db_secret)
         envFrom:
           - secretRef:
+              name: oauth-client-secret
+          - secretRef:
               name: $(superset_secret)
         image: superset
         command: ['sh', '-c', "sleep 30; superset-init --username $SUPERSET_ADMIN_USER --firstname $SUPERSET_ADMIN_FNAME --lastname $SUPERSET_ADMIN_LNAME --email $SUPERSET_ADMIN_EMAIL --password $SUPERSET_ADMIN_PASSWORD"]
@@ -68,6 +70,11 @@ spec:
               name: $(superset_db_secret)
         - name: SUPERSET_CONFIG_PATH
           value: /etc/superset/superset_config.py
+        envFrom:
+          - secretRef:
+              name: superset
+          - secretRef:
+              name: oauth-client-secret
         image: superset
         ports:
           - containerPort: 8088
@@ -90,3 +97,5 @@ spec:
             items:
               - key: superset_config.py
                 path: superset_config.py
+              - key: custom_sso_security_manager.py
+                path: custom_sso_security_manager.py
