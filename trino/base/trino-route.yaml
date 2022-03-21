@@ -1,17 +1,13 @@
-apiVersion: route.openshift.io/v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
   name: trino-route
-  labels:
-    instance: trino
-    role: trino-coordinator
+  annotations:
+    kubernetes.io/tls-acme: "true"
 spec:
+  host: trino.operate-first.cloud
   to:
     kind: Service
     name: trino-service
   port:
     targetPort: 8080
-  wildcardPolicy: None
-  tls:
-    termination: edge
-    insecureEdgeTerminationPolicy: Redirect
