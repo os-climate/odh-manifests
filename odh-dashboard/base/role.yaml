@@ -47,3 +47,22 @@ rules:
       - delete
     resources:
       - deploymentconfigs
+  - apiGroups:
+      - image.openshift.io
+    verbs:
+      - get
+      - list
+      - update
+      - patch
+      - delete
+    resources:
+      - imagestreams
+  - apiGroups:
+      - tekton.dev
+    verbs:
+      - get
+      - list
+      - create
+      - delete
+    resources:
+      - pipelineruns
