@@ -50,6 +50,7 @@ rules:
   - apiGroups:
       - image.openshift.io
     verbs:
+      - create
       - get
       - list
       - update
@@ -66,3 +67,30 @@ rules:
       - delete
     resources:
       - pipelineruns
+  - apiGroups:
+      - ''
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    resources:
+      - configmaps
+      - secrets
+  - apiGroups:
+      - batch
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    resources:
+      - cronjobs
+      - jobs
+      - jobs/status
