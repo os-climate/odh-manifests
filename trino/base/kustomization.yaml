@@ -140,9 +140,13 @@ images:
     newName: quay.io/cloudservices/ubi-hive
     newTag: 2.3.3-002
   - name: trino
+<<<<<<< HEAD
     newName: quay.io/opendatahub/trino
 <<<<<<< HEAD
     newTag: '361'
 =======
+=======
+    newName: quay.io/os-climate/trino
+>>>>>>> d53cf76 (Switch trino image to osc-climate)
     newTag: '373'
 >>>>>>> bfbaf71 (Update trino to 373.)
