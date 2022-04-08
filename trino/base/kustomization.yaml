@@ -141,4 +141,8 @@ images:
     newTag: 2.3.3-002
   - name: trino
     newName: quay.io/opendatahub/trino
+<<<<<<< HEAD
     newTag: '361'
+=======
+    newTag: '373'
+>>>>>>> bfbaf71 (Update trino to 373.)
