@@ -135,5 +135,5 @@ images:
     newName: quay.io/cloudservices/ubi-hive
     newTag: 2.3.3-002
   - name: trino
-    newName: quay.io/opendatahub/trino
+    newName: quay.io/os-climate/trino
     newTag: '373'
