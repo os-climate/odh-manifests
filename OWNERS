@@ -1,14 +1,12 @@
 # Each list is sorted alphabetically, additions should maintain that order
 approvers:
-- anishasthana
-- crobby
-- lavlas
-- nakfour
-- vpavlin
+- 4n4nd
+- harshad16
+- HumairAK
 
 reviewers:
-- anishasthana
-- crobby
-- lavlas
-- nakfour
-- vpavlin
+- 4n4nd
+- Gkrumbach07
+- Gregory-Pereira
+- harshad16
+- HumairAK
