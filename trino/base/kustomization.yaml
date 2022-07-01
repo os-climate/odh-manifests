@@ -141,4 +141,4 @@ images:
     newTag: 2.3.3-002
   - name: trino
     newName: quay.io/os-climate/trino
-    newTag: '388'
+    newTag: '380'
