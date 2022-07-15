@@ -7,27 +7,11 @@ metadata:
 data:
   jupyterhub-singleuser-profiles.yaml: |
       sizes:
-      - name: Small
+      - name: Default
         resources:
           requests:
-            memory: 512Mi
-            cpu: 100m
+            memory: 6Gi
+            cpu: 1m
           limits:
-            memory: 512Mi
-            cpu: 100m
-      - name: Medium
-        resources:
-          requests:
-            memory: 512Mi
-            cpu: 120m
-          limits:
-            memory: 6300Mi
-            cpu: 3
-      - name: Large
-        resources:
-          requests:
-            memory: 5Gi
-            cpu: 500m
-          limits:
-            memory: 34Gi
-            cpu: 9
+            memory: 12Gi
+            cpu: 4
