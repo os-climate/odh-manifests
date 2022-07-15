@@ -15,7 +15,6 @@ resources:
 - jupyterhub-cluster-role.yaml
 - jupyterhub-route.yaml
 - jupyterhub-spark-operator-configmap.yaml
-- jupyterhub-groups-configmap.yaml
 - jupyterhub-notebook-image-puller-rb.yaml
 - traefik-credentials-secret.yaml
 - traefik-configmap.yaml
