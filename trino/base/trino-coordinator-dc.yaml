@@ -30,6 +30,10 @@ spec:
           configMap:
             name: trino-catalog
             defaultMode: 420
+        - name: kafka-table-description-dir
+          configMap:
+            name: kafka-table-description-dir
+            defaultMode: 420
         - name: prometheus-exporter
           secret:
             secretName: trino-config-monitoring
@@ -64,6 +68,8 @@ spec:
               mountPath: /etc/trino/prometheus
             - name: trino-catalogs-volume
               mountPath: /etc/trino/catalog
+            - name: kafka-table-description-dir
+              mountPath: /etc/kafka/table-description-dir
           image: trino
           envFrom:
             - secretRef:
