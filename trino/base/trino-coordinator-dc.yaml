@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    configmap.reloader.stakater.com/reload: "trino-configfiles, trino-catalog"
+    configmap.reloader.stakater.com/reload: "trino-configfiles, trino-catalog, kafka-table-description-dir"
     secret.reloader.stakater.com/reload: "s3buckets, trino-oauth"
   name: trino-coordinator
   labels:
