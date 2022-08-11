@@ -7,7 +7,6 @@ resources:
 - route.yaml
 - supersetdb-deployment.yaml
 - supersetdb-pvc.yaml
-- supersetdb-secret.yaml
 - supersetdb-service.yaml
 - superset-rbac-viewer-role.yaml
 - superset-rbac-viewer-rolebinding.yaml

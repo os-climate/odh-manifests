@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     template.alpha.openshift.io/wait-for-ready: "true"
+    secret.reloader.stakater.com/reload: "supersetdb"
   labels:
     app: supersetdb
   name: supersetdb
