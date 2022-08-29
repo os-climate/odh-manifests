@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "trino-configfiles, trino-catalog, kafka-table-description-dir"
-    secret.reloader.stakater.com/reload: "s3buckets, trino-oauth"
+    secret.reloader.stakater.com/reload: "s3buckets, trino-oauth, trino-secret-env"
   name: trino-coordinator
   labels:
     instance: trino
@@ -78,6 +78,8 @@ spec:
                 name: s3buckets
             - secretRef:
                 name: shared-secret
+            - secretRef:
+                name: trino-secret-env
           args:
             - --config=/etc/trino/config-coordinator.properties
             - --jvm-config=/etc/trino/jvm-coordinator.config
