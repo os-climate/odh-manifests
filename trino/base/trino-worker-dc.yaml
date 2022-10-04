@@ -31,6 +31,10 @@ spec:
           configMap:
             name: trino-catalog
             defaultMode: 420
+        - name: trino-secret-files
+          secret:
+            secretName: trino-secret-files
+            defaultMode: 420
       containers:
         - resources:
             requests:
@@ -56,6 +60,8 @@ spec:
               mountPath: /etc/trino
             - name: trino-catalogs-volume
               mountPath: /etc/trino/catalog
+            - name: trino-secret-files
+              mountPath: /etc/trino/secrets
           image: trino
           envFrom:
             - secretRef:
