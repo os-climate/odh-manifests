@@ -35,6 +35,13 @@ spec:
           secret:
             secretName: trino-secret-files
             defaultMode: 420
+        - name: prometheus-exporter
+          configMap:
+            name: trino-config-monitoring
+            defaultMode: 420
+            items:
+              - key: monitoring-config.yaml
+                path: monitoring-config.yaml
       containers:
         - resources:
             requests:
@@ -55,6 +62,8 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
+            - containerPort: 8082
+              protocol: TCP
           volumeMounts:
             - name: trino-config-volume
               mountPath: /etc/trino
@@ -62,6 +71,8 @@ spec:
               mountPath: /etc/trino/catalog
             - name: trino-secret-files
               mountPath: /etc/trino/secrets
+            - name: prometheus-exporter
+              mountPath: /etc/trino/prometheus
           image: trino
           envFrom:
             - secretRef:

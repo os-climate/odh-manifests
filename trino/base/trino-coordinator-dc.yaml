@@ -35,12 +35,12 @@ spec:
             name: kafka-table-description-dir
             defaultMode: 420
         - name: prometheus-exporter
-          secret:
-            secretName: trino-config-monitoring
+          configMap:
+            name: trino-config-monitoring
             defaultMode: 420
             items:
-              - key: config.yaml
-                path: config.yaml
+              - key: monitoring-config.yaml
+                path: monitoring-config.yaml
         - name: trino-secret-files
           secret:
             secretName: trino-secret-files
@@ -64,6 +64,8 @@ spec:
                   fieldPath: metadata.uid
           ports:
             - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8082
               protocol: TCP
           volumeMounts:
             - name: trino-config-volume
