@@ -20,15 +20,28 @@ rules:
       - operators.coreos.com
     resources:
       - clusterserviceversions
-  - verbs:
+      - subscriptions
+  - apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreams/layers
+    verbs:
+      - get
+  - apiGroups:
+      - ''
+    verbs:
+      - create
+      - delete
       - get
       - list
+      - patch
+      - update
       - watch
-    apiGroups:
-      - ''
     resources:
-      - services
       - configmaps
+      - persistentvolumeclaims
+      - secrets
   - verbs:
       - get
       - list
@@ -70,3 +83,49 @@ rules:
       - user.openshift.io
     resources:
       - groups
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - pods
+      - serviceaccounts
+      - services
+      - namespaces
+  - apiGroups:
+      - rbac.authorization.k8s.io
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    resources:
+      - rolebindings
+      - clusterrolebindings
+      - roles
+  - apiGroups:
+      - ''
+      - events.k8s.io
+    resources:
+      - events
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - kubeflow.org
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    resources:
+      - notebooks
