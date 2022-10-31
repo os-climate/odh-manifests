@@ -41,5 +41,5 @@ spec:
         cpu: "4"
         memory: 4Gi
   groupsConfig:
-    adminGroups: 'odh-admins'
+    adminGroups: 'odh-admin'
     allowedGroups: 'system:authenticated'
