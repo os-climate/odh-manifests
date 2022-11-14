@@ -3,10 +3,9 @@ kind: Kustomization
 commonLabels:
   app: odh-dashboard
   app.kubernetes.io/part-of: odh-dashboard
-bases:
-  - ../crd
-  - ../apps
 resources:
+- ../crd
+- ../apps
 - role.yaml
 - cluster-role.yaml
 - service-account.yaml
