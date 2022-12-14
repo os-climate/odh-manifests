@@ -18,4 +18,4 @@ resources:
 images:
 - name: odh-dashboard
   newName: quay.io/thoth-station/odh-dashboard
-  newTag: cnbi-v0.1.0
+  newTag: cnbi-v0.2.0
