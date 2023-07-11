@@ -34,6 +34,10 @@ spec:
             items:
               - key: config.yaml
                 path: config.yaml
+        - name: trino-secret-files
+          secret:
+            secretName: trino-secret-files
+            defaultMode: 420
       containers:
         - resources:
             requests:
@@ -61,12 +65,18 @@ spec:
               mountPath: /etc/trino/prometheus
             - name: trino-catalogs-volume
               mountPath: /etc/trino/catalog
+            - name: trino-secret-files
+              mountPath: /etc/trino/secrets
           image: trino
           envFrom:
             - secretRef:
                 name: trino-oauth
             - secretRef:
                 name: s3buckets
+            - secretRef:
+                name: shared-secret
+            - secretRef:
+                name: trino-secret-env
           args:
             - --config=/etc/trino/config-coordinator.properties
             - --jvm-config=/etc/trino/jvm-coordinator.config

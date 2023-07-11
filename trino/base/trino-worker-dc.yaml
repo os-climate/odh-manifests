@@ -28,6 +28,10 @@ spec:
           configMap:
             name: trino-catalog
             defaultMode: 420
+        - name: trino-secret-files
+          secret:
+            secretName: trino-secret-files
+            defaultMode: 420
       containers:
         - resources:
             requests:
